@@ -7,11 +7,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{89842311-65F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{0DCD389B-7CB5-4146-A5FC-7A3E07F1BE24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelHelper", "src\ExcelHelper\ExcelHelper.csproj", "{2E811B0A-4AFC-4D03-B836-5B939E5C49B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OperatorTest.Tests", "test\OperatorTest.Tests\OperatorTest.Tests.csproj", "{AFF8F072-04BD-4093-B473-DC9A7ED25680}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Utility", "src\Framework.Utility\Framework.Utility.csproj", "{CD5440B3-18EE-437C-9DFA-0BF881821C9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Operator", "src\Operator\Operator.csproj", "{A37F1550-F39C-4299-920D-5CD2D977B0B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelHelper.Tests", "test\ExcelHelper.Tests\ExcelHelper.Tests.csproj", "{2C1DCEFF-8F81-43D0-A9DF-F0561DA3AA2C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "src\ConsoleApp\ConsoleApp.csproj", "{AC880FA5-1CA4-4EF1-92AA-C3A4047F1E76}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,26 +19,25 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2E811B0A-4AFC-4D03-B836-5B939E5C49B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2E811B0A-4AFC-4D03-B836-5B939E5C49B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2E811B0A-4AFC-4D03-B836-5B939E5C49B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2E811B0A-4AFC-4D03-B836-5B939E5C49B0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CD5440B3-18EE-437C-9DFA-0BF881821C9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CD5440B3-18EE-437C-9DFA-0BF881821C9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CD5440B3-18EE-437C-9DFA-0BF881821C9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CD5440B3-18EE-437C-9DFA-0BF881821C9A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2C1DCEFF-8F81-43D0-A9DF-F0561DA3AA2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2C1DCEFF-8F81-43D0-A9DF-F0561DA3AA2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2C1DCEFF-8F81-43D0-A9DF-F0561DA3AA2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2C1DCEFF-8F81-43D0-A9DF-F0561DA3AA2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFF8F072-04BD-4093-B473-DC9A7ED25680}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFF8F072-04BD-4093-B473-DC9A7ED25680}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFF8F072-04BD-4093-B473-DC9A7ED25680}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFF8F072-04BD-4093-B473-DC9A7ED25680}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A37F1550-F39C-4299-920D-5CD2D977B0B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A37F1550-F39C-4299-920D-5CD2D977B0B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A37F1550-F39C-4299-920D-5CD2D977B0B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A37F1550-F39C-4299-920D-5CD2D977B0B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC880FA5-1CA4-4EF1-92AA-C3A4047F1E76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC880FA5-1CA4-4EF1-92AA-C3A4047F1E76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC880FA5-1CA4-4EF1-92AA-C3A4047F1E76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC880FA5-1CA4-4EF1-92AA-C3A4047F1E76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{2E811B0A-4AFC-4D03-B836-5B939E5C49B0} = {89842311-65F2-41DF-9B84-CE1A9C6D7D53}
-		{CD5440B3-18EE-437C-9DFA-0BF881821C9A} = {89842311-65F2-41DF-9B84-CE1A9C6D7D53}
-		{2C1DCEFF-8F81-43D0-A9DF-F0561DA3AA2C} = {0DCD389B-7CB5-4146-A5FC-7A3E07F1BE24}
+		{AFF8F072-04BD-4093-B473-DC9A7ED25680} = {0DCD389B-7CB5-4146-A5FC-7A3E07F1BE24}
+		{A37F1550-F39C-4299-920D-5CD2D977B0B4} = {89842311-65F2-41DF-9B84-CE1A9C6D7D53}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {13DBF5D1-7097-4EA1-ADDF-E9F6ECC63465}

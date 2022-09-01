@@ -1,25 +1,31 @@
 ﻿using OfficeOpenXml;
+using System;
+using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Reflection;
+using System.Threading.Tasks;
 
-namespace ExcelHelper
+namespace Operator.Services
 {
-    public interface IExcelGeneratorHelper
+    public interface IExcelGeneratorService
     {
         Task<string> Generate<T>(IEnumerable<T> data, string fileName);
     }
 
-    public sealed class ExcelGeneratorHelper : IExcelGeneratorHelper
+
+    public sealed class ExcelGeneratorService : IExcelGeneratorService
     {
         public async Task<string> Generate<T>(IEnumerable<T> data, string fileName)
         {
             var path = GetFilePath(fileName);
 
             DataTable table = CreateDataTable(data);
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             using (var excelPack = new ExcelPackage(path))
             {
                 var ws = excelPack.Workbook.Worksheets.Add("1");
-                ws.Cells.LoadFromDataTable(table, true, OfficeOpenXml.Table.TableStyles.Light8);
+                ws.Cells.LoadFromDataTable(table, true , null);
                 await excelPack.SaveAsync();
             }
 

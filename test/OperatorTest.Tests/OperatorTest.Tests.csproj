@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\ExcelHelper\ExcelHelper.csproj" />
+    <ProjectReference Include="..\..\src\Operator\Operator.csproj" />
   </ItemGroup>
 
 </Project>
