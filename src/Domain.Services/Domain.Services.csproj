@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.1</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="EPPlus" Version="6.0.7" />
+		<PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="6.0.0" />
+		<PackageReference Include="Z.EntityFramework.Extensions.EFCore" Version="5.14.4" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\libs\Framework.Utility\Framework.Utility.csproj" />
+		<ProjectReference Include="..\Domain.DataAccess\Domain.DataAccess.csproj" />
+		<ProjectReference Include="..\Domain.Shared\Domain.Shared.csproj" />
+	</ItemGroup>
+
+</Project>
