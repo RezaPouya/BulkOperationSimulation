@@ -63,6 +63,8 @@ namespace Operator.Services
             await SaveInDb(redisObjects.ToList());
             Console.WriteLine("---------------------------------------------------------------------------");
 
+            await _distributedCache.RemoveAsync(filePath.GetRedisKey());
+
             Console.WriteLine("Operation end");
             sw.Stop();
             Console.WriteLine($"operation completed in '{sw.ElapsedMilliseconds}' milli seconds");
