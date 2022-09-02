@@ -20,19 +20,35 @@ public class Program
 
     private static IHostBuilder CreateHostBuilder(string[] args)
     {
-        string connectionString = @"Server=.;Database=BulkOperationDb;Trusted_Connection=True;TrustServerCertificate=True";
+        var builder = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json", optional: false);
+
+        var config = builder.Build();
 
         var hostBuilder = Host.CreateDefaultBuilder(args)
+
             .ConfigureAppConfiguration((context, builder) =>
             {
                 builder.SetBasePath(Directory.GetCurrentDirectory());
             })
             .ConfigureServices((context, services) =>
             {
-                services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(connectionString));
+                services.AddDbContextPool<AppDbContext>(options =>
+                {
+                    options.UseSqlServer(config["ConnectionStrings:Default"]);
+                    options.EnableThreadSafetyChecks(false);
+                    options.EnableDetailedErrors(true);
+                    options.EnableSensitiveDataLogging(false);
+                });
                 services.AddTransient<IMainService, MainService>();
                 services.AddScoped(typeof(IExcelReader<>), typeof(ExcelReader<>));
                 services.AddTransient<IExcelGeneratorService, ExcelGeneratorService>();
+                services.AddStackExchangeRedisCache(options =>
+                {
+                    options.InstanceName = config["Redis:InstanceName"];
+                    options.Configuration = config["Redis:Configuration"];
+                });
             });
 
         return hostBuilder;
