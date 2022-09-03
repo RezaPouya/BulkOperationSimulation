@@ -178,10 +178,6 @@ namespace Domain.Services.Implementations
                     options.BatchSize = 1000;
                 });
             }
-
-            //dbContext.AddRange(dbRecords);
-
-            //await dbContext.SaveChangesAsync();
         }
     }
 }

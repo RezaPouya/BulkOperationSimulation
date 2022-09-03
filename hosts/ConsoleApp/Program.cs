@@ -34,7 +34,6 @@ public class Program
         var config = builder.Build();
 
         var hostBuilder = Host.CreateDefaultBuilder(args)
-
             .ConfigureAppConfiguration((context, builder) =>
             {
                 builder.SetBasePath(Directory.GetCurrentDirectory());
