@@ -166,15 +166,18 @@ namespace Domain.Services.Implementations
 
         private async Task SaveInDbTask(IEnumerable<ExcelDto> records)
         {
-            var dbContext = _serviceProvider.GetService<AppDbContext>();
-
-            var dbRecords = records.Select(p => new ExcelDb() { Id = p.Id }).Distinct().ToList();
-
-            await dbContext.BulkInsertAsync(dbRecords, options =>
+            using (IServiceScope scope = _serviceProvider.CreateScope())
             {
-                options.InsertIfNotExists = true;
-                options.BatchSize = 500;
-            });
+                var dbContext = scope.ServiceProvider.GetService<AppDbContext>();
+
+                var dbRecords = records.Select(p => new ExcelDb() { Id = p.Id }).Distinct().ToList();
+
+                await dbContext.BulkInsertAsync(dbRecords, options =>
+                {
+                    options.InsertIfNotExists = true;
+                    options.BatchSize = 1000;
+                });
+            }
 
             //dbContext.AddRange(dbRecords);
 
